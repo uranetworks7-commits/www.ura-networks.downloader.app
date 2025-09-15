@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>URA Downloading Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("https://files.catbox.moe/e3jk7c.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 25px;
+      padding: 30px 20px;
+      width: 95%;
+      max-width: 600px;
+      color: #fff;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 15px 0;
+      padding: 20px;
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+    }
+    .btn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      box-shadow: 0 8px 25px rgba(255, 65, 108, 0.8);
+    }
+    img {
+      max-width: 100%;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    p {
+      font-size: 1.2em;
+      margin: 15px 0;
+      font-weight: 500;
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin-top: 15px;
+      font-weight: 700;
+      color: #ffd700;
+      text-shadow: 0 0 10px #ffd700;
+      animation: pulse 1s infinite;
+    }
+    .hidden {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes pulse {
+      0% {opacity: 1;}
+      50% {opacity: 0.6;}
+      100% {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="glass" id="mainMenu">
+    <h1>𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜</h1>
+    <button class="btn" onclick="openPage('full')">📱 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙵𝚞𝚕𝚕 𝚂𝚌𝚛𝚎𝚎𝚗 𝙰𝚙𝚔</button>
+    <button class="btn" onclick="openPage('normal')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙽𝚘𝚛𝚖𝚊𝚕 𝚂𝚌𝚛𝚎𝚎𝚗 𝙰𝚙𝚔</button>
+    <button class="btn" onclick="openPage('auto')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙵𝚞𝚕𝚕+𝙰𝚞𝚝𝚘 𝚁𝚘𝚝𝚊𝚝𝚎 𝙰𝚙𝚔</button>
+  </div>
+
+  <div class="glass hidden" id="downloadPage">
+    <h1 id="pageTitle">Download</h1>
+    <img id="previewImg" src="" alt="Preview">
+    <p id="desc"></p>
+    <button class="btn" onclick="startDownload()">📁GEᑎEᖇᗩTE ᗪOᗯᑎᒪOᗩᗪ ᒪIᑎK</button>
+    <p class="countdown hidden" id="countdown"></p>
+    <button class="btn" style="background: linear-gradient(135deg,#00c6ff,#0072ff);" onclick="goBack()">Ｂａｃｋ </button>
+  </div>
+
+  <script>
+    let currentLink = "";
+
+    function openPage(type) {
+      document.getElementById("mainMenu").classList.add("hidden");
+      document.getElementById("downloadPage").classList.remove("hidden");
+
+      if (type === "full") {
+        document.getElementById("pageTitle").innerText = "Ｆｕｌｌ Ｓｃｒｅｅｎ ＡＰＫ";
+        document.getElementById("previewImg").src = "https://files.catbox.moe/rmf24j.jpg";
+        document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
+        currentLink = "https://www.mediafire.com/file/nlmj6ewcn6lvial/URA_(FULL+SCREEN)_VLCXURA_STD.apk/file";
+      }
+      else if (type === "normal") {
+        document.getElementById("pageTitle").innerText = "ＮＯＲＭＡＬ ＳＣＲＥＥＮ ＡＰＫ";
+        document.getElementById("previewImg").src = "https://files.catbox.moe/85en38.jpg";
+        document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
+        currentLink = "https://www.mediafire.com/file/klwdgosbsb8p0xg/URA_(NORMAL+SCREEN)_VLCXURA_STD.apk/file";
+      }
+      else if (type === "auto") {
+        document.getElementById("pageTitle").innerText = "𝙵𝚄𝙻𝙻 + 𝙰𝚄𝚃𝙾 𝚁𝙾𝚃𝙰𝚃𝙴 𝙰𝙿𝙺";
+        document.getElementById("previewImg").src = "https://files.catbox.moe/85en38.jpg";
+        document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
+        currentLink = "https://www.mediafire.com/file/9dhyuevac4715l9/URA_(Auto+Rotate+FULL)_VLCXURA_STD.apk.apk/file";
+      }
+    }
+
+    function startDownload() {
+      const countdownEl = document.getElementById("countdown");
+      countdownEl.classList.remove("hidden");
+      let timeLeft = 3;
+      countdownEl.innerText = "𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙻𝚒𝚗𝚔 🔗" + timeLeft + "s";
+
+      let timer = setInterval(() => {
+        timeLeft--;
+        if (timeLeft > 0) {
+          countdownEl.innerText = "𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙻𝚒𝚗𝚔 " + timeLeft + "s";
+        } else {
+          clearInterval(timer);
+          countdownEl.innerText = "𝓡𝓮𝓭𝓲𝓻𝓮𝓬𝓽𝓲𝓷𝓰";
+          window.open(currentLink, "_blank");
+        }
+      }, 1000);
+    }
+
+    function goBack() {
+      document.getElementById("downloadPage").classList.add("hidden");
+      document.getElementById("mainMenu").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
