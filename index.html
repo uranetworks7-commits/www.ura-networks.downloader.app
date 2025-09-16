@@ -35,12 +35,16 @@
       letter-spacing: 2px;
       text-shadow: 0 3px 10px rgba(0,0,0,0.6);
     }
+    .small-heading {
+      font-size: 1.5em;
+    }
     .btn {
       display: block;
       width: 100%;
       margin: 15px 0;
-      padding: 20px;
-      font-size: 1.3em;
+      /* Reduced padding and font-size to make the button smaller */
+      padding: 15px;
+      font-size: 1.1em;
       font-weight: 700;
       color: #fff;
       background: linear-gradient(135deg, #ff416c, #ff4b2b);
@@ -90,10 +94,9 @@
 </head>
 <body>
   <div class="glass" id="mainMenu">
-    <h1>𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜</h1>
+    <h1 class="small-heading">𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜 (16/09/25)</h1>
     <button class="btn" onclick="openPage('full')">📱 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙵𝚞𝚕𝚕 𝚂𝚌𝚛𝚎𝚎𝚗 𝙰𝚙𝚔</button>
     <button class="btn" onclick="openPage('normal')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙽𝚘𝚛𝚖𝚊𝚕 𝚂𝚌𝚛𝚎𝚎𝚗 𝙰𝚙𝚔</button>
-    <button class="btn" onclick="openPage('auto')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙵𝚞𝚕𝚕+𝙰𝚞𝚝𝚘 𝚁𝚘𝚝𝚊𝚝𝚎 𝙰𝚙𝚔</button>
   </div>
 
   <div class="glass hidden" id="downloadPage">
@@ -113,22 +116,16 @@
       document.getElementById("downloadPage").classList.remove("hidden");
 
       if (type === "full") {
-        document.getElementById("pageTitle").innerText = "Ｆｕｌｌ Ｓｃｒｅｅｎ ＡＰＫ";
+        document.getElementById("pageTitle").innerText = "Ｆｕｌｌ Ｓｃｒｅ𝚎𝚗 ＡＰＫ";
         document.getElementById("previewImg").src = "https://files.catbox.moe/rmf24j.jpg";
         document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
-        currentLink = "https://www.mediafire.com/file/nlmj6ewcn6lvial/URA_(FULL+SCREEN)_VLCXURA_STD.apk/file";
+        currentLink = "https://www.mediafire.com/file/622g7r7h4n2bdht/URA_%2528FULL_SCREEN%2529_VLCXURA_STD_mod.apk/file";
       }
       else if (type === "normal") {
-        document.getElementById("pageTitle").innerText = "ＮＯＲＭＡＬ ＳＣＲＥＥＮ ＡＰＫ";
+        document.getElementById("pageTitle").innerText = "ＮＯＲＭＡＬ ＳＣＲＥＥ𝙽 ＡＰＫ";
         document.getElementById("previewImg").src = "https://files.catbox.moe/85en38.jpg";
         document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
-        currentLink = "https://www.mediafire.com/file/klwdgosbsb8p0xg/URA_(NORMAL+SCREEN)_VLCXURA_STD.apk/file";
-      }
-      else if (type === "auto") {
-        document.getElementById("pageTitle").innerText = "𝙵𝚄𝙻𝙻 + 𝙰𝚄𝚃𝙾 𝚁𝙾𝚃𝙰𝚃𝙴 𝙰𝙿𝙺";
-        document.getElementById("previewImg").src = "https://files.catbox.moe/rmf24j.jpg";
-        document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
-        currentLink = "https://www.mediafire.com/file/9dhyuevac4715l9/URA_(Auto+Rotate+FULL)_VLCXURA_STD.apk.apk/file";
+        currentLink = "https://www.mediafire.com/file/opinvgvl7k3kw4u/URA_(NORMAL+SCREEN)_VLCXURA_STD_mod.apk/file";
       }
     }
 
@@ -144,7 +141,7 @@
           countdownEl.innerText = "𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙻𝚒𝚗𝚔 " + timeLeft + "s";
         } else {
           clearInterval(timer);
-          countdownEl.innerText = "𝓡𝓮𝓭𝓲𝓻𝓮𝓬𝓽𝓲𝓷𝓰";
+          countdownEl.innerText = "𝓡𝓮𝚍𝚒𝚛𝓮𝓬𝚝𝓲𝚗𝚐";
           window.open(currentLink, "_blank");
         }
       }, 1000);
