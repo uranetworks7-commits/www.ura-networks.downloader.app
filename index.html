@@ -90,13 +90,24 @@
       50% {opacity: 0.6;}
       100% {opacity: 1;}
     }
+    /* Style for the new button to make it stand out */
+    .beta-btn {
+        background: linear-gradient(135deg, #00d2ff, #3a7bd5) !important;
+        box-shadow: 0 6px 20px rgba(58, 123, 213, 0.6) !important;
+    }
+    .beta-btn:hover {
+        background: linear-gradient(135deg, #3a7bd5, #00d2ff) !important;
+        box-shadow: 0 8px 25px rgba(58, 123, 213, 0.8) !important;
+        transform: scale(1.08);
+    }
   </style>
 </head>
 <body>
   <div class="glass" id="mainMenu">
-    <h1 class="small-heading">𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜 (26/09/25)</h1>
+    <h1 class="small-heading">𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜 (03/10/25)</h1>
     <button class="btn" onclick="openPage('full')">📱 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙵𝚞𝚕𝚕 𝚂𝚌𝚛𝚎𝚎𝚗 𝙰𝚙𝚔</button>
     <button class="btn" onclick="openPage('normal')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝙽𝚘𝚛𝚖𝚊𝚕 𝚂𝚌𝚛𝚎𝚎𝚗 𝙰𝚙𝚔</button>
+    <button class="btn beta-btn" onclick="openPage('beta')">📱 𝙱𝚎𝚝𝚊 𝟹𝟸 & 𝟼𝟺 𝚋𝚒𝚝 APK </button>
   </div>
 
   <div class="glass hidden" id="downloadPage">
@@ -116,16 +127,23 @@
       document.getElementById("downloadPage").classList.remove("hidden");
 
       if (type === "full") {
-        document.getElementById("pageTitle").innerText = "Ｆｕｌｌ Ｓｃｒｅ𝚎𝚗 ＡＰＫ";
+        document.getElementById("pageTitle").innerText = "Ｆｕｌｌ Ｓｃｒｅｅｎ ＡＰＫ";
         document.getElementById("previewImg").src = "https://files.catbox.moe/rmf24j.jpg";
         document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
-        currentLink = "https://www.mediafire.com/file/lodee7i218bdbo8/URA_(FULL+SCREEN)_VLCXURA_STD.apk/file";
+        currentLink = "https://www.mediafire.com/file/g4et1qyvhgo33l1/URA-APP(Full_Screen)_YashxVLFxUS_URA-Studio.apk/file";
       }
       else if (type === "normal") {
         document.getElementById("pageTitle").innerText = "ＮＯＲＭＡＬ ＳＣＲＥＥ𝙽 ＡＰＫ";
         document.getElementById("previewImg").src = "https://files.catbox.moe/85en38.jpg";
         document.getElementById("desc").innerText = "𝙸𝚏 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚗𝚎 𝚗𝚊𝚟𝚒𝚐𝚊𝚝𝚒𝚘𝚗 𝚋𝚞𝚝𝚝𝚘𝚗𝚜 𝚕𝚘𝚘𝚔 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜";
-        currentLink = "https://www.mediafire.com/file/qn3qnouc13atrzk/URA_(Normal_Screen)_VLCXURA_STD.apk/file";
+        currentLink = "https://www.mediafire.com/file/mv2u4a6invscd87/URA-APP(Normal_Screen)_YashxVLFxUS_URA-Studio.apk/file";
+      }
+      // NEW BETA OPTION ADDED HERE
+      else if (type === "beta") {
+        document.getElementById("pageTitle").innerText = "𝙱𝙴𝚃𝙰 𝚂𝙲𝚁𝙴𝙴𝙽 𝙰𝙿𝙺";
+        document.getElementById("previewImg").src = "https://files.catbox.moe/e3jk7c.jpg"; // Using background image as a placeholder
+        document.getElementById("desc").innerText = "𝚃𝚑𝚒𝚜 𝚒𝚜 𝙱𝚎𝚝𝚊 𝚅𝚎𝚛𝚜𝚒𝚘𝚗 (𝟹𝟸 & 𝟼𝟺 𝚋𝚒𝚝) 𝚏𝚘𝚛 𝚚𝚞𝚒𝚌𝚔 𝚊𝚗𝚍 𝙻𝚘𝚠 𝙳𝚎𝚟𝚒𝚌𝚎𝚜 ☀";
+        currentLink = "https://www.mediafire.com/file/ego93vh0wapo2zq/URA-Beta(Beta-32&64bit)_YashxVLFxUS_URA-Studio.apk/file"; // **CHANGE THIS TO THE ACTUAL BETA LINK**
       }
     }
 
@@ -141,7 +159,7 @@
           countdownEl.innerText = "𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙻𝚒𝚗𝚔 " + timeLeft + "s";
         } else {
           clearInterval(timer);
-          countdownEl.innerText = "𝓡𝓮𝚍𝚒𝚛𝓮𝓬𝚝𝓲𝚗𝚐";
+          countdownEl.innerText = "𝓡𝓮𝓭𝓲𝓻𝓮𝓬𝓽𝓲𝚗𝚐";
           window.open(currentLink, "_blank");
         }
       }, 1000);
