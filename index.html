@@ -5,21 +5,11 @@
   <title>URA Downloading Center</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* *** Fireworks Canvas Style *** */
-    #fireworks {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1; 
-    }
-
     body {
       margin: 0;
       padding: 0;
       font-family: "Poppins", sans-serif;
-      /* Background is kept, but fireworks will overlay it */
+      /* Background is kept */
       background: url("https://files.catbox.moe/e3jk7c.jpg") no-repeat center center/cover;
       min-height: 100vh;
       display: flex;
@@ -27,10 +17,10 @@
       /* Align the content back to the center */
       align-items: center; 
       text-align: center;
-      /* Removed padding-bottom */
     }
     .glass {
-      /* z-index > -1 is crucial to ensure the glass panel is visible above the fireworks canvas */
+      /* z-index > -1 is crucial to ensure the glass panel is visible above the fireworks canvas, 
+         but since canvas is gone, z-index: 10 is just a good practice for layering. */
       z-index: 10; 
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(15px);
@@ -128,12 +118,12 @@
   </style>
 </head>
 <body>
-  <canvas id="fireworks"></canvas>
+  
 
   <div class="glass" id="mainMenu">
-    <h1 class="small-heading">𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜 (19/10/25)</h1>
-    <button class="btn diwali-btn" onclick="openPage('diwali')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚄𝚁𝙰-𝙿𝚛𝚘 𝙳𝚒𝚠𝚊𝚕𝚒 𝙴𝚍𝚒𝚝𝚒𝚘𝚗 </button>
-    <button class="btn beta-btn" onclick="openPage('beta')">📱 𝙳𝚒𝚠𝚊𝚕𝚒 𝙴𝚍𝚒𝚝𝚒𝚘𝚗 𝙱𝚎𝚝𝚊 𝟹𝟸 & 𝟼𝟺 𝚋𝚒𝚝 APK </button>
+    <h1 class="small-heading">𝚄𝚁𝙰 𝙵𝚒𝚕𝚎𝚜 (21/10/25)</h1>
+    <button class="btn diwali-btn" onclick="openPage('diwali')">📱𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍 𝚄𝚁𝙰-𝙿𝚛𝚘 𝙰𝚙𝚙 </button>
+    <button class="btn beta-btn" onclick="openPage('beta')">📱 𝚄𝚁𝙰 𝙱𝚎𝚝𝚊 𝟹𝟸 & 𝟼𝟺 𝚋𝚒𝚝 𝙰𝚙𝚙 </button>
   </div>
 
   <div class="glass hidden" id="downloadPage">
@@ -153,18 +143,18 @@
       document.getElementById("downloadPage").classList.remove("hidden");
 
       if (type === "diwali") { // New option for Diwali Edition
-        document.getElementById("pageTitle").innerText = "𝙳𝚒𝚠𝚊𝚕𝚒 𝙴𝚍𝚒𝚝𝚒𝚘𝚗 𝙰𝙿𝙺";
+        document.getElementById("pageTitle").innerText = "𝚄𝚁𝙰 𝙿𝚛𝚘 𝙰𝙿𝙺";
         document.getElementById("previewImg").src = "https://files.catbox.moe/rmf24j.jpg"; // Placeholder image
-        document.getElementById("desc").innerText = "𝙴𝚗𝚓𝚘𝚢 𝚝𝚑𝚎 𝚕𝚊𝚝𝚎𝚜𝚝 𝚄𝚁𝙰-𝙿𝚛𝚘 𝙳𝚒𝚠𝚊𝚕𝚒 𝙴𝚍𝚒𝚝𝚒𝚘𝚗 𝚠𝚒𝚝𝚑 𝚜𝚙𝚎𝚌𝚒𝚊𝚕 𝚏𝚎𝚊𝚝𝚞𝚛𝚎𝚜!";
+        document.getElementById("desc").innerText = "𝙴𝚗𝚓𝚘𝚢 𝚝𝚑𝚎 𝚕𝚊𝚝𝚎𝚜𝚝 𝚄𝚁𝙰-𝙿𝚛𝚘  𝚠𝚒𝚝𝚑 𝚜𝚙𝚎𝚌𝚒𝚊𝚕 𝚏𝚎𝚊𝚝𝚞𝚛𝚎𝚜!";
         // **IMPORTANT**: Replace with the actual Diwali Edition link
-        currentLink = "https://www.mediafire.com/file/i1v99h8bcgs8cv7/URA-Pro-Diwali_Edition_prx_.apk/file";
+        currentLink = "https://www.mediafire.com/file/cs7aczj5200mu2a/URA-Pro_APP_X.(Normal+Scr)_.apk/file";
       }
       // Beta option (kept as requested)
       else if (type === "beta") {
         document.getElementById("pageTitle").innerText = "𝙱𝙴𝚃𝙰 ᏉᏋᏒᏕᎥᎧᏁ  𝙰𝙿𝙺";
         document.getElementById("previewImg").src = "https://files.catbox.moe/e3jk7c.jpg"; // Using background image as a placeholder
         document.getElementById("desc").innerText = "𝚃𝚑𝚒𝚜 𝚒𝚜 𝙱𝚎𝚝𝚊 𝚅𝚎𝚛𝚜𝚒𝚘𝚗 (𝟹𝟸 & 𝟼𝟺 𝚋𝚒𝚝) 𝚏𝚘𝚛 𝚚𝚞𝚒𝚌𝚔 𝚊𝚗𝚍 𝙻𝚘𝚠 𝙳𝚎𝚟𝚒𝚌𝚎𝚜 ☀";
-        currentLink = "https://www.mediafire.com/file/3tuankw6hbervu8/URA-Beta.Diwali_Edition_X(32&64bit)_VLf.prx_.apk/file";
+        currentLink = "https://www.mediafire.com/file/ash6tq5lchidv2w/URA-Beta.(32+&+64+bit+x+APK)_mod.apk/file";
       }
       // Removed 'full' and 'normal' logic
     }
@@ -181,7 +171,7 @@
           countdownEl.innerText = "𝙶𝚎𝚗𝚎𝚛𝚊𝚝𝚒𝚗𝚐 𝙻𝚒𝚗𝚔 " + timeLeft + "s";
         } else {
           clearInterval(timer);
-          countdownEl.innerText = "𝓡𝓮𝓭𝓲𝚛𝚎𝚌𝚝𝓲𝚗𝓰";
+          countdownEl.innerText = "𝓡𝓮𝓭𝓲𝚛𝚎𝚌𝚝𝓲𝚗𝚐";
           window.open(currentLink, "_blank");
         }
       }, 1000);
@@ -191,273 +181,6 @@
       document.getElementById("downloadPage").classList.add("hidden");
       document.getElementById("mainMenu").classList.remove("hidden");
     }
-  </script>
-
-  <script>
-    const canvas = document.getElementById("fireworks");
-    const ctx = canvas.getContext("2d");
-    let cw = window.innerWidth;
-    let ch = window.innerHeight;
-    canvas.width = cw;
-    canvas.height = ch;
-
-    const colors = ["#ff5722", "#2196f3", "#4caf50", "#ffc107", "#ffffff", "#e91e63", "#673ab7"];
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    // --- Particle Class ---
-    class Particle {
-      constructor(x, y, color, speedScale = 1, sizeScale = 1, heavy = false) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
-        this.size = random(0.5, 2.5) * sizeScale;
-        this.angle = random(0, Math.PI * 2);
-        // ✨ INCREASED SPEED for normal particles
-        this.speed = random(1, 10) * speedScale; 
-        this.gravity = heavy ? 0.2 : 0.08; // Heavy particles fall faster
-        this.alpha = 1;
-        this.decay = random(0.02, 0.05); 
-      }
-      update() {
-        this.x += Math.cos(this.angle) * this.speed;
-        this.y += Math.sin(this.angle) * this.speed + this.gravity;
-        this.speed *= 0.95; 
-        this.alpha -= this.decay;
-      }
-      draw() {
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.globalAlpha = 1; 
-      }
-    }
-
-    // --- Base Firework Class (For normal fireworks) ---
-    class Firework {
-      constructor() {
-        this.x = random(cw * 0.3, cw * 0.7); 
-        this.y = ch;
-        this.initialY = ch;
-        // Target Y is in the upper half of the screen (10% to 40% down)
-        this.targetY = random(ch * 0.1, ch * 0.4); 
-        // ✨ INCREASED ASCENT SPEED
-        this.speed = random(8, 15); 
-        this.color = colors[Math.floor(random(0, colors.length - 2))]; 
-        this.trail = [];
-        this.exploded = false;
-        this.vibrating = false;
-        this.vibrationCounter = 0;
-        this.vibrationDuration = 10; // Frames to vibrate
-      }
-      
-      update() {
-        if (this.exploded) return;
-
-        if (!this.vibrating) {
-          // Normal Ascent
-          this.trail.push({ x: this.x, y: this.y });
-          if (this.trail.length > 15) this.trail.shift(); 
-          this.y -= this.speed;
-          this.speed *= 0.99;
-
-          if (this.y <= this.targetY) {
-            this.vibrating = true;
-          }
-        } else {
-          // Pre-Explosion Vibration Logic
-          if (this.vibrationCounter < this.vibrationDuration) {
-            // Vibrate left and right quickly
-            this.x += Math.sin(this.vibrationCounter * 3) * 0.8; 
-            this.vibrationCounter++;
-          } else {
-            this.explode();
-          }
-        }
-      }
-
-      draw() {
-        if (this.exploded) return;
-        
-        // Draw Tip
-        ctx.fillStyle = '#fff';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2, false);
-        ctx.fill();
-
-        // Draw Trail
-        ctx.beginPath();
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = 1;
-        for (let i = this.trail.length - 1; i > 0; i--) {
-          const p = this.trail[i];
-          const nextP = this.trail[i - 1];
-          ctx.globalAlpha = (i / this.trail.length) * 0.6;
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(nextP.x, nextP.y);
-          ctx.stroke();
-        }
-        ctx.globalAlpha = 1;
-      }
-
-      explode() {
-        this.exploded = true;
-        const burstColor = this.color;
-        const particleCount = Math.floor(random(60, 100)); 
-
-        for (let i = 0; i < particleCount; i++) {
-          const particleColor = Math.random() < 0.6 ? burstColor : colors[Math.floor(random(0, colors.length))];
-          particles.push(new Particle(this.x, this.y, particleColor));
-        }
-      }
-    }
-
-    // --- Nuclear Firework Class (The Big Shot) ---
-    class NuclearFirework extends Firework {
-      constructor() {
-        super(); // Inherit basic properties
-        this.x = cw / 2; // Always launch from the center
-        this.y = ch;
-        // Target Y is even higher (10% to 30% down)
-        this.targetY = random(ch * 0.1, ch * 0.3); 
-        // ✨ INCREASED ASCENT SPEED
-        this.speed = random(6, 10); // Slower, heavier ascent
-        this.color = '#ff4500'; // Deep orange/red for a massive explosion
-        this.vibrationDuration = 20; // Longer vibration
-      }
-
-      update() {
-        if (this.exploded) return;
-
-        if (!this.vibrating) {
-          // Heavy Ascent
-          this.y -= this.speed;
-          this.speed *= 0.998; // Slower speed decay
-          
-          // Add very bright, heavy sparks to the trail
-          if (Math.random() < 0.5) {
-              particles.push(new Particle(this.x, this.y, '#ffd700', 1, 2, true)); // Gold sparks, heavy
-          }
-
-          // Add segment to the main trail
-          this.trail.push({ x: this.x, y: this.y });
-          if (this.trail.length > 50) this.trail.shift(); // Very long, heavy trail
-
-          if (this.y <= this.targetY) {
-            this.vibrating = true;
-          }
-        } else {
-          // Vibrate Logic (same as base class, but longer duration)
-          if (this.vibrationCounter < this.vibrationDuration) {
-            this.x += Math.sin(this.vibrationCounter * 2) * 2.5; // Stronger vibration
-            this.vibrationCounter++;
-          } else {
-            this.explode();
-          }
-        }
-      }
-
-      draw() {
-        if (this.exploded) return;
-        
-        // Draw HUGE Tip
-        ctx.fillStyle = '#fff';
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 4, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.shadowBlur = 0; // Reset shadow
-
-        // Draw Trail (Very thick and bright)
-        ctx.beginPath();
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = 5;
-        for (let i = this.trail.length - 1; i > 0; i--) {
-          const p = this.trail[i];
-          const nextP = this.trail[i - 1];
-          ctx.globalAlpha = (i / this.trail.length) * 1.0;
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(nextP.x, nextP.y);
-          ctx.stroke();
-        }
-        ctx.globalAlpha = 1;
-      }
-
-      explode() {
-        this.exploded = true;
-        const particleCount = Math.floor(random(400, 600)); // Massive particle count
-
-        for (let i = 0; i < particleCount; i++) {
-          let particleColor;
-          if (Math.random() < 0.2) {
-            particleColor = '#fffaaa'; // Bright white/yellow core
-          } else if (Math.random() < 0.6) {
-            particleColor = this.color; // Deep orange
-          } else {
-            particleColor = colors[Math.floor(random(0, colors.length))];
-          }
-          
-          // ✨ SIGNIFICANTLY INCREASED EXPLOSION SPEED
-          particles.push(new Particle(this.x, this.y, particleColor, random(2.5, 4.5), random(1.5, 3), true)); 
-        }
-      }
-    }
-
-    let fireworks = [];
-    let particles = [];
-
-    function animate() {
-      // Clear the canvas with a very subtle trail
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.fillStyle = "rgba(0, 0, 0, 0.08)"; // Creates the trail effect on the black background
-      ctx.fillRect(0, 0, cw, ch);
-      ctx.globalCompositeOperation = "lighter"; // Essential for the glow
-
-      // --- Update and Draw ---
-      for (let i = fireworks.length - 1; i >= 0; i--) {
-        const firework = fireworks[i];
-        firework.update();
-        firework.draw();
-        if (firework.exploded) {
-          fireworks.splice(i, 1);
-        }
-      }
-
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const particle = particles[i];
-        particle.update();
-        particle.draw();
-        if (particle.alpha <= 0) {
-          particles.splice(i, 1);
-        }
-      }
-
-      // 🚀 INCREASED FREQUENCY for Normal Fireworks: 0.01 -> 0.03 (Tripled)
-      if (Math.random() < 0.03) { 
-        fireworks.push(new Firework());
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    // 💥 INCREASED FREQUENCY for Nuclear Fireworks: 5000ms -> 3000ms
-    setInterval(() => {
-      fireworks.push(new NuclearFirework());
-    }, 3000); // Launches a Nuclear Firework every 8000ms (8 seconds)
-
-    animate();
-
-    window.addEventListener("resize", () => {
-      cw = window.innerWidth;
-      ch = window.innerHeight;
-      canvas.width = cw;
-      canvas.height = ch;
-    });
   </script>
 </body>
 </html>
